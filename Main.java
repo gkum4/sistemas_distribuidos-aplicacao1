@@ -68,6 +68,7 @@ public class Main {
 
       while (true) {
         String userInput = scanner.nextLine();
+        System.out.println("");
 
         if (userInput.equals("1")) {
           if (state == State.WANTED || state == State.HELD) {
@@ -80,7 +81,7 @@ public class Main {
           criticalSectionHandler.enter(timeAskedToEnterCriticalSection);
           state = State.HELD;
 
-          System.out.println("Você entrou na Seção Crítica!");
+          System.out.println("Você ENTROU na Seção Crítica! Digite \"2\" para sair.");
           continue;
         }
 
@@ -94,7 +95,7 @@ public class Main {
           criticalSectionHandler.leave(waitingProcesses, serverPorts);
           waitingProcesses = new ArrayList<String[]>();
 
-          System.out.println("Você saiu da Seção Crítica!");
+          System.out.println("Você SAIU da Seção Crítica! Digite \"1\" para entrar novamente.");
           continue;
         }
 
@@ -106,8 +107,8 @@ public class Main {
     private void printInstructions() {
       System.out.println("Seja bem vindo à Aplicação 1 - Sockets!");
       System.out.println("Digite:");
-      System.out.println("\"1\" para entrar na Seção Crítica");
-      System.out.println("\"2\" para sair da Seção Crítica");
+      System.out.println("\"1\" para entrar na Seção Crítica.");
+      System.out.println("\"2\" para sair da Seção Crítica.");
     }
   };
 }
